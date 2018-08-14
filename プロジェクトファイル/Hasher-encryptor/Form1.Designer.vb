@@ -41,7 +41,7 @@ Partial Class Form1
         Me.GroupBox1.Size = New System.Drawing.Size(782, 204)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "暗号化・解読するファイルをドラッグしてください"
+        Me.GroupBox1.Text = "暗号化・復号するファイルをドラッグしてください"
         '
         'TextBox1
         '
@@ -90,7 +90,7 @@ Partial Class Form1
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(367, 83)
         Me.Button2.TabIndex = 1
-        Me.Button2.Text = "解読"
+        Me.Button2.Text = "復号"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
