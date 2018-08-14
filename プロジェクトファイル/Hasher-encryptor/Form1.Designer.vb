@@ -23,22 +23,34 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Location = New System.Drawing.Point(21, 24)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(782, 204)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "暗号化・解読するファイルをドラッグしてください"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.AllowDrop = True
+        Me.TextBox1.Location = New System.Drawing.Point(15, 30)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(761, 144)
+        Me.TextBox1.TabIndex = 0
         '
         'GroupBox2
         '
@@ -53,6 +65,15 @@ Partial Class Form1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Tag = ""
         Me.GroupBox2.Text = "操作選択"
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(15, 134)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(374, 83)
+        Me.Button4.TabIndex = 3
+        Me.Button4.Text = "パスワード変更"
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'Button3
         '
@@ -81,15 +102,6 @@ Partial Class Form1
         Me.Button1.Text = "暗号化"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(15, 134)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(374, 83)
-        Me.Button4.TabIndex = 3
-        Me.Button4.Text = "パスワード変更"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(13.0!, 24.0!)
@@ -99,6 +111,8 @@ Partial Class Form1
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Form1"
         Me.Text = "Hasher-encryptor"
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -110,4 +124,5 @@ Partial Class Form1
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Button4 As Button
+    Friend WithEvents TextBox1 As TextBox
 End Class
