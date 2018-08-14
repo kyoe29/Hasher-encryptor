@@ -13,4 +13,8 @@
         executePath = e.Data.GetData(DataFormats.FileDrop)(0)
         TextBox1.Text = executePath
     End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        TextBox1.Text = executePath
+    End Sub
 End Class
