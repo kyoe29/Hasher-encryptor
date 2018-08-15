@@ -29,5 +29,35 @@
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         buttonenable(False)
+        MessageBox.Show(SHA256(False, InputBox("ハッシュ化するも字は？")))
     End Sub
+
+    Public Function SHA256(ByVal isFile As Boolean, pathanpass As Boolean)
+        'SHA256ハッシュ値を計算する文字列
+        Dim s As String = pathanpass
+        Select Case isFile
+
+            Case True 'ファイルである
+
+            Case False 'パスワードである
+                '文字列をbyte型配列に変換する
+                Dim data As Byte() = System.Text.Encoding.UTF8.GetBytes(s)
+
+                'SHA256CryptoServiceProviderオブジェクトを作成
+                Dim sha256cy As New System.Security.Cryptography.SHA256CryptoServiceProvider()
+                'ハッシュ値を計算する
+                Dim bs As Byte() = sha256cy.ComputeHash(data)
+
+                'リソースを解放する
+                sha256cy.Clear()
+
+                'byte型配列を16進数の文字列に変換
+                Dim result As New System.Text.StringBuilder()
+                Dim b As Byte
+                For Each b In bs
+                    result.Append(b.ToString("x2"))
+                Next b
+                Return result
+        End Select
+    End Function
 End Class
