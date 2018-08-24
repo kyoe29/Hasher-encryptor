@@ -29,7 +29,7 @@
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         buttonenable(False)
-        MessageBox.Show(SHA256(False, InputBox("ハッシュ化するも字は？")))
+        MessageBox.Show(SHA256(False, InputBox("ハッシュ化する文字は？")))
     End Sub
 
     Public Function SHA256(ByVal isFile As Boolean, pathanpass As Boolean)
