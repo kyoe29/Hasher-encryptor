@@ -83,6 +83,8 @@
                     result.Append(b.ToString("x2"))
                 Next b
                 Return result
+            Case Else
+                Return True
         End Select
     End Function
 End Class
