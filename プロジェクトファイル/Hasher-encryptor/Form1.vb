@@ -38,7 +38,32 @@
         Select Case isFile
 
             Case True 'ファイルである
+                'MD5ハッシュ値を計算するファイル 
+                Dim fileName As String = s
+                'ファイルを開く
+                Dim fs As New System.IO.FileStream(
+    fileName,
+    System.IO.FileMode.Open,
+    System.IO.FileAccess.Read,
+    System.IO.FileShare.Read)
 
+                'MD5CryptoServiceProviderオブジェクトを作成 
+                Dim md5 As New System.Security.Cryptography.MD5CryptoServiceProvider()
+
+                'ハッシュ値を計算する 
+                Dim bs As Byte() = md5.ComputeHash(fs)
+
+                'リソースを解放する
+                md5.Clear()
+                'ファイルを閉じる 
+                fs.Close()
+
+                'byte型配列を16進数の文字列に変換 
+                Dim result As New System.Text.StringBuilder()
+                For Each b As Byte In bs
+                    result.Append(b.ToString("x2"))
+                Next
+                Return result
             Case False 'パスワードである
                 '文字列をbyte型配列に変換する
                 Dim data As Byte() = System.Text.Encoding.UTF8.GetBytes(s)
